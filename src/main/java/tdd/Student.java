@@ -1,18 +1,20 @@
+package tdd;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Student {
 
     private static Scanner scanner = new Scanner(System.in);
-    private static long counter;
-    public String name;
-    public long id;
-    public ArrayList<Integer> grades;
+    private static long counter = 0;
+    protected String name;
+    protected long id;
+    protected ArrayList<Integer> grades;
 
     public Student() {
         counter++;
         this.name = name;
-        this.id = id;
+        this.id = counter;
         this.grades = new ArrayList<>();
     }
 
@@ -34,6 +36,10 @@ public class Student {
 
     public void addGrade(int grade) {
         grades.add(grade);
+    }
+
+    public int getGrade(int index) {
+        return grades.get(index);
     }
 
     public double getGradeAverage() {
